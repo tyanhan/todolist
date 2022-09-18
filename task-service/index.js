@@ -24,4 +24,4 @@ router.put("/updateTask", handleUpdateTask);
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => console.log("task-service is listening on port 5000"));
+app.listen(PORT, () => console.log("task-service is listening on port ", PORT));
