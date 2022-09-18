@@ -40,7 +40,7 @@ const ToDoList = () => {
 				setDesciptionError(err.response.data.message);
 				console.debug(err);
 			})
-		if (res && res.status === 200) {
+		if (res && res.status === 201) {
 			console.debug("Successfully added task");
 			let newTasks = [...tasks, { description, isChecked: false }];
 			setTasks(newTasks);
