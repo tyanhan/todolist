@@ -6,7 +6,7 @@ import TaskModel from "./taskModel.js";
 // eslint-disable-next-line no-undef
 let mongoDB = process.env.ENV == "PROD" ? process.env.DB_CLOUD_URI : process.env.DB_LOCAL_URI;
 
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+await mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -18,7 +18,7 @@ export const addTask = async (description, isChecked) => {
 		newTask.save();
 		console.debug("Successfully added task to the database");
 	} catch (err) {
-		console.error("ERROR: Could not create new task", err);
+		console.error("Could not create new task", err);
 		throw err;
 	}
 };
@@ -40,7 +40,7 @@ export const getTasks = async () => {
 		console.debug(tasks);
 		return tasks;
 	} catch (err) {
-		console.error("ERROR: Could not retrieve tasks", err);
+		console.error("Could not retrieve tasks", err);
 		throw err;
 	}
 };
@@ -51,7 +51,7 @@ export const deleteTask = async (description) => {
 		await db.collection("taskmodels").deleteOne({ "description": description });
 		console.debug("Successfully deleted task in the database");
 	} catch (err) {
-		console.error("ERROR: Could not delete task", err);
+		console.error("Could not delete task", err);
 		throw err;
 	}
 };
@@ -62,7 +62,7 @@ export const updateTask = async (oldDesc, oldIsChecked, newDesc, newIsChecked) =
 		await db.collection("taskmodels").updateOne({ "description": oldDesc, "isChecked": oldIsChecked }, { $set: { "description": newDesc, "isChecked": newIsChecked } });
 		console.debug("Successfully updated task in the database");
 	} catch (err) {
-		console.error("ERROR: Could not update task", err);
+		console.error("Could not update task", err);
 		throw err;
 	}
 };

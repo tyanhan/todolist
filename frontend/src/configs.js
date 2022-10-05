@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-undef
-const URI_TASK_SVC = process.env.URI_TASK_SVC || "http://localhost:5000";
+const URI_TASK_SVC = process.env.URI_TASK_SVC || "http://localhost:8079";
 
 const PREFIX_TASK_SVC = "/api/task";
 
