@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - lts/*
+services: 
+  - mongodb
+script:
+  - cd task-service
+  - echo "Installing dependencies..."
+  - npm install
+  - echo 'Running tests...'
+  - npm run test
