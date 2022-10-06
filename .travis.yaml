@@ -3,9 +3,8 @@ node_js:
   - lts/*
 services: 
   - mongodb
-script:
+before_script:
   - cd task-service
-  - echo "Installing dependencies..."
-  - npm install
-  - echo 'Running tests...'
+  - npm ci
+script:
   - npm run test
