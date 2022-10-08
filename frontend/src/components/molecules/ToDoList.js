@@ -133,7 +133,7 @@ const ToDoList = () => {
 				{isLoading ? <CircularProgress sx={{ py: 2 }} /> :
 					error != null ? <Box py={2}>{error}</Box> :
 						<List sx={{ width: '100%', minWidth: 600, bgcolor: 'background.paper', pt: "0px", pb: "0px" }}>
-							{tasks.map((task) => {
+							{tasks?.map((task) => {
 								let description = task.description;
 								let isChecked = task.isChecked;
 
@@ -175,7 +175,6 @@ const ToDoList = () => {
 							})}
 
 						</List>}
-
 			</Paper >
 			<Dialog open={isDialogOpen} onClose={closeDialog} fullWidth>
 				<DialogTitle>Add task</DialogTitle>
