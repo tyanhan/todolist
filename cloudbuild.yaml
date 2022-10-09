@@ -1,8 +1,8 @@
 steps:
-- name: nodejs16
+- name: node:10.15.1
   entrypoint: npm
   args: ["install"]
-- name: nodejs16
+- name: node:10.15.1
   entrypoint: npm
   args: ["run", "create-env"]
   env:
