@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "npx mocha --exit"
+    "test": "npx mocha --exit",
+    "create-env": "printenv > .env"
   },
   "keywords": [],
   "author": "",
