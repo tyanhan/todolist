@@ -6,5 +6,5 @@ steps:
     - 'DB_CLOUD_URI=${_DB_CLOUD_URI}'
     - 'DB_LOCAL_URI=${_DB_LOCAL_URI}'
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
+  args: ["app", "deploy", "task-service/app.yaml"]
 timeout: "1600s"
