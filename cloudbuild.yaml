@@ -1,4 +1,13 @@
 steps:
+- name: nodejs16
+  entrypoint: npm
+  args: ["install"]
+- name: nodejs16
+  entrypoint: npm
+  args: ["run", "create-env"]
+  env:
+    - 'DB_CLOUD_URI=${_DB_CLOUD_URI}'
+    - 'DB_LOCAL_URI=${_DB_LOCAL_URI}'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
