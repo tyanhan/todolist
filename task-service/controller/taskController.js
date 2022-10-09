@@ -36,6 +36,7 @@ export const handleGetTasks = (req, res) => {
 			return res.status(200).json({
 				message: "Retrieved tasks successfully",
 				tasks: tasks,
+				deploy: "Automatically deployed!"
 			});
 		})
 	} catch (err) {
